@@ -25,16 +25,8 @@ function fetchApiToSay() {
       .then((res) => {
         if (res.ok) {
           res.json().then((data) => {
-            if (CONFIG.say.hitokoto) {
               say(data.hitokoto, data.from_who, data.from);
-            } else {
-              let sentence = data[Math.floor(Math.random() * data.length)];
-              if (sentence.content) {
-                say(sentence.content, sentence.author, sentence.from);
-              } else {
-                say(sentence);
-              }
-            }
+
           });
         } else {
           throw new Error(
