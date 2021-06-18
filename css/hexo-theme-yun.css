@@ -658,7 +658,7 @@ input {
   grid-gap: 1rem;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   margin: auto;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .hty-layout-grid__cell {
   width: 100%;
@@ -1181,6 +1181,7 @@ input {
   transition-delay: 0s;
   background-color: rgba(255,255,255,0.9);
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
+/* tag 容器 */
 }
 .post-card:hover {
   box-shadow: 0 0px 25px rgba(0,0,0,0.05);
@@ -1216,15 +1217,15 @@ input {
   display: inline-flex;
   justify-content: flex-end;
 }
-.tag,
-.category {
+.tag-item,
+.category-item {
   font-size: 0.8rem;
   position: relative;
   color: var(--text-color, #000);
   letter-spacing: 1px;
 }
-.tag::before,
-.category::before {
+.tag-item::before,
+.category-item::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1235,13 +1236,13 @@ input {
   border-radius: 4px;
   transition: width 0.2s ease;
 }
-.tag:hover::before,
-.category:hover::before {
+.tag-item:hover::before,
+.category-item:hover::before {
   width: 104%;
   left: -2%;
 }
-.tag .icon,
-.category .icon {
+.tag-item .icon,
+.category-item .icon {
   width: 0.8rem;
   height: 0.8rem;
   padding-left: 0.1rem;
@@ -1927,7 +1928,7 @@ input {
   text-align: center;
   font-size: 1rem;
 }
-#goUp {
+#back-to-top {
   position: relative;
   position: fixed;
   right: -0.9rem;
@@ -1939,11 +1940,11 @@ input {
   transition-duration: 0.3s;
   transition-delay: 0s;
 }
-#goUp.show {
+#back-to-top.show {
   transform: translateX(-30px) rotate(360deg);
   opacity: 1;
 }
-#goUp .icon {
+#back-to-top .icon {
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -1996,6 +1997,9 @@ input {
 }
 #say #say-from {
   display: block;
+}
+.hidden {
+  display: none;
 }
 @media (prefers-color-scheme: dark) {
   :root {
