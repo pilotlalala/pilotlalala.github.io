@@ -8,7 +8,8 @@ function say(content, author, from) {
   }
 }
 
-if (CONFIG.say.api) {
+function fetchApiToSay(){
+	if (CONFIG.say.api) {
   fetch(new Request(CONFIG.say.api))
     .then(function(res) {
       if (res.ok) {
@@ -29,4 +30,5 @@ if (CONFIG.say.api) {
     .catch(function(e) {
       console.log("error: " + e.toString());
     });
+}
 }
