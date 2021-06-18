@@ -1,11 +1,3 @@
-/* global CONFIG */
-
-/**
- * 显示一句话
- * @param {string} content
- * @param {string} author
- * @param {string} from
- */
 function say(content, author, from) {
   document.querySelector("#say-content").innerText = content;
   if (author) {
@@ -16,26 +8,25 @@ function say(content, author, from) {
   }
 }
 
-/**
- * 获取在线 API
- */
-function fetchApiToSay() {
-  if (CONFIG.say.api) {
-    fetch(CONFIG.say.api)
-      .then((res) => {
-        if (res.ok) {
-          res.json().then((data) => {
-              say(data.hitokoto, data.from_who, data.from);
-
-          });
-        } else {
-          throw new Error(
-            CONFIG.say.api + ", HTTP error, status = " + res.status
-          );
-        }
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
-  }
+if (CONFIG.say.api) {
+  fetch(new Request(CONFIG.say.api))
+    .then(function(res) {
+      if (res.ok) {
+        res.json().then(function(data) {
+          if (CONFIG.say.hitokoto) {
+            say(data.hitokoto, data.from_who, data.from);
+          } else {
+            let sentence = data[Math.floor(Math.random() * data.length)];
+            say(sentence.content, sentence.author, sentence.from);
+          }
+        });
+      } else {
+        throw new Error(
+          CONFIG.say.api + ", HTTP error, status = " + res.status
+        );
+      }
+    })
+    .catch(function(e) {
+      console.log("error: " + e.toString());
+    });
 }
