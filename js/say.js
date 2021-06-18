@@ -26,10 +26,12 @@ function fetchApiToSay() {
         if (res.ok) {
           res.json().then((data) => {
             if (CONFIG.say.hitokoto) {
+			  alert(data.from)
               say(data.hitokoto, data.from_who, data.from);
             } else {
               let sentence = data[Math.floor(Math.random() * data.length)];
-              if (sentence.content) {
+              alert("进了下面")
+			  if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
                 say(sentence);
