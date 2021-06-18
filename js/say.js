@@ -29,7 +29,11 @@ function fetchApiToSay() {
               say(data.hitokoto, data.from_who, data.from);
             } else {
               let sentence = data[Math.floor(Math.random() * data.length)];
-              say(sentence.content, sentence.author, sentence.from);
+              if (sentence.content) {
+                say(sentence.content, sentence.author, sentence.from);
+              } else {
+                say(sentence,sentence,sentence);
+              }
             }
           });
         } else {
