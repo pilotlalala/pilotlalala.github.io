@@ -32,7 +32,7 @@ function fetchApiToSay() {
               if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-                say(sentence,sentence,sentence);
+                say(sentence,data[1],data[2]);
               }
             }
           });
