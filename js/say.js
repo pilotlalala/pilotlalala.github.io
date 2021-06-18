@@ -29,8 +29,9 @@ function fetchApiToSay() {
               say(data.hitokoto, data.from_who, data.from);
             } else {
               let sentence = data[Math.floor(Math.random() * data.length)];
-			  let a = data[Math.floor(Math.random() * data.length)+1]
-			  let b = data[Math.floor(Math.random() * data.length)+2]
+			  let a = data[data.length]
+			  let b = data[data.length]
+			  console.log(data)
               if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
