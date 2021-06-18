@@ -34,7 +34,7 @@ function fetchApiToSay() {
 			  if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-				alert("进了下面的下面")
+				 console.log(sentence)
                 say(sentence);
               }
             }
