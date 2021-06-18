@@ -2032,7 +2032,7 @@ input {
   }
   :root:not([data-user-color-scheme]) .sidebar {
     background-color: rgba(27,31,46,0.95);
-    background-image: none;
+    background-image: url("/images/background.jpg");
   }
   :root:not([data-user-color-scheme]) .post-title-link {
     color: #3ca1ff;
@@ -2108,7 +2108,7 @@ input {
 }
 [data-user-color-scheme='dark'] .sidebar {
   background-color: rgba(27,31,46,0.95);
-  background-image: none;
+  background-image: url("/images/background.jpg");
 }
 [data-user-color-scheme='dark'] .post-title-link {
   color: #3ca1ff;
