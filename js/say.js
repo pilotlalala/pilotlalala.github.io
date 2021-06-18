@@ -32,7 +32,7 @@ function fetchApiToSay() {
 			  if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-                say(data.hitokoto, data.from_who, data.from);
+                say(sentence,sentence.from,sentence.author);
               }
             }
           });
