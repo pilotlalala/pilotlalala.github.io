@@ -28,11 +28,10 @@ function fetchApiToSay() {
             if (CONFIG.say.hitokoto) {
               say(data.hitokoto, data.from_who, data.from);
             } else {
-              let sentence = data.hitokoto;
-			  if (sentence.content) {
+              let sentence = data[Math.floor(Math.random() * data.length)];
+              if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-				  alert(sentence)
                 say(sentence);
               }
             }
