@@ -29,10 +29,12 @@ function fetchApiToSay() {
               say(data.hitokoto, data.from_who, data.from);
             } else {
               let sentence = data[Math.floor(Math.random() * data.length)];
+			  let a = data[Math.floor(Math.random() * data.length)+1]
+			  let b = data[Math.floor(Math.random() * data.length)+2]
               if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-                say(sentence,data[1],data[2]);
+                say(sentence,a,b);
               }
             }
           });
