@@ -29,13 +29,10 @@ function fetchApiToSay() {
               say(data.hitokoto, data.from_who, data.from);
             } else {
               let sentence = data[Math.floor(Math.random() * data.length)];
-			  let author = data[1];
-			  let from = data[2];
 			  if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
-				alert("进了下面")
-                say(sentence,author,from);
+                say(data.hitokoto, data.from_who, data.from);
               }
             }
           });
