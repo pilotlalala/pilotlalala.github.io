@@ -7,7 +7,7 @@
  * @param {string} from
  */
 function say(content, author, from) {
-  document.querySelector("#say-content").innerText = content + author + "「" + from + "」";
+  document.querySelector("#say-content").innerText = content;
   if (author) {
     document.querySelector("#say-author").innerText = author;
   }
@@ -28,10 +28,11 @@ function fetchApiToSay() {
             if (CONFIG.say.hitokoto) {
               say(data.hitokoto, data.from_who, data.from);
             } else {
-              let sentence = CONFIG.say.api.text;
+              let sentence = data.hitokoto;
 			  if (sentence.content) {
                 say(sentence.content, sentence.author, sentence.from);
               } else {
+				  alert(sentence)
                 say(sentence);
               }
             }
