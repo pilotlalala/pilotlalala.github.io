@@ -7,7 +7,7 @@
  * @param {string} from
  */
 function say(content, author, from) {
-  document.querySelector("#say-content").innerText = content;
+  document.querySelector("#say-content").innerText = content + author + "「" + from + "」";
   if (author) {
     document.querySelector("#say-author").innerText = author;
   }
