@@ -55,14 +55,43 @@
 <p>​    写一个Javabean</p>
 <p>​    把bean配置到xml文件内</p>
 <p>​    直接调用</p>
-<h4 id="配置beans-xml"><a href="#配置beans-xml" class="headerlink" title="配置beans.xml"></a>配置beans.xml</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;people&quot; class=&quot;cn.gok.People&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;list1&quot; &gt;</span><br><span class="line">        &lt;list&gt;</span><br><span class="line">            &lt;value&gt;List one&lt;/value&gt;</span><br><span class="line">            &lt;value&gt;List two&lt;/value&gt;</span><br><span class="line">            &lt;value&gt;List three&lt;/value&gt;</span><br><span class="line">        &lt;/list&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property name=&quot;map1&quot; &gt;</span><br><span class="line">        &lt;props&gt;</span><br><span class="line">            &lt;prop key=&quot;key1&quot;&gt;List one&lt;/prop&gt;</span><br><span class="line">            &lt;prop key=&quot;key2&quot;&gt;List two&lt;/prop&gt;</span><br><span class="line">            &lt;prop key=&quot;key3&quot;&gt;List three&lt;/prop&gt;</span><br><span class="line">        &lt;/props&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property name=&quot;set1&quot; &gt;</span><br><span class="line">        &lt;set&gt;</span><br><span class="line">            &lt;value&gt;List one&lt;/value&gt;</span><br><span class="line">            &lt;value&gt;List two&lt;/value&gt;</span><br><span class="line">            &lt;value&gt;List three&lt;/value&gt;</span><br><span class="line">        &lt;/set&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="配置beans-xml"><a href="#配置beans-xml" class="headerlink" title="配置beans.xml"></a>配置beans.xml</h4><pre class="language-none"><code class="language-none">&lt;bean id&#x3D;&quot;people&quot; class&#x3D;&quot;cn.gok.People&quot;&gt;
+    &lt;property name&#x3D;&quot;list1&quot; &gt;
+        &lt;list&gt;
+            &lt;value&gt;List one&lt;&#x2F;value&gt;
+            &lt;value&gt;List two&lt;&#x2F;value&gt;
+            &lt;value&gt;List three&lt;&#x2F;value&gt;
+        &lt;&#x2F;list&gt;
+    &lt;&#x2F;property&gt;
+    &lt;property name&#x3D;&quot;map1&quot; &gt;
+        &lt;props&gt;
+            &lt;prop key&#x3D;&quot;key1&quot;&gt;List one&lt;&#x2F;prop&gt;
+            &lt;prop key&#x3D;&quot;key2&quot;&gt;List two&lt;&#x2F;prop&gt;
+            &lt;prop key&#x3D;&quot;key3&quot;&gt;List three&lt;&#x2F;prop&gt;
+        &lt;&#x2F;props&gt;
+    &lt;&#x2F;property&gt;
+    &lt;property name&#x3D;&quot;set1&quot; &gt;
+        &lt;set&gt;
+            &lt;value&gt;List one&lt;&#x2F;value&gt;
+            &lt;value&gt;List two&lt;&#x2F;value&gt;
+            &lt;value&gt;List three&lt;&#x2F;value&gt;
+        &lt;&#x2F;set&gt;
+    &lt;&#x2F;property&gt;
+&lt;&#x2F;bean&gt;</code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private List list1 = new ArrayList&lt;&gt;();</span><br><span class="line">private Map map1 = new HashMap&lt;&gt;();</span><br><span class="line">private Set set1 = new HashSet();</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">private List list1 &#x3D; new ArrayList&lt;&gt;();
+private Map map1 &#x3D; new HashMap&lt;&gt;();
+private Set set1 &#x3D; new HashSet();</code></pre>
 
 <p>​    </p>
-<h4 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;person&quot; class=&quot;cn.gok.Person&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;name&quot; value=&quot;李狗嗨&quot;&gt;&lt;/property&gt;</span><br><span class="line">    &lt;property name=&quot;people&quot; ref=&quot;people&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h4><pre class="language-none"><code class="language-none">&lt;bean id&#x3D;&quot;person&quot; class&#x3D;&quot;cn.gok.Person&quot;&gt;
+    &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;李狗嗨&quot;&gt;&lt;&#x2F;property&gt;
+    &lt;property name&#x3D;&quot;people&quot; ref&#x3D;&quot;people&quot;&gt;&lt;&#x2F;property&gt;
+&lt;&#x2F;bean&gt;</code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Person &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private People people;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">public class Person &#123;
+    private String name;
+    private People people;</code></pre>
 
 <p>​    </p>
 <p><strong>标签思想</strong></p>
@@ -72,7 +101,7 @@
 <p>​    传递一个构造参数</p>
 <p>​    可以传递多个构造参数</p>
 <p>​    语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;constructor-arg value=&quot;&quot; type=&quot;&quot; scope=&quot;&quot;&gt;&lt;/constuctor-arg&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;constructor-arg value&#x3D;&quot;&quot; type&#x3D;&quot;&quot; scope&#x3D;&quot;&quot;&gt;&lt;&#x2F;constuctor-arg&gt;</code></pre>
 
 <p>​        </p>
 <p>scope:</p>
@@ -82,7 +111,7 @@
 <p>​            session：</p>
 <p>​            global session：针对每个session 一个新对象</p>
 <p>​    使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;&quot; class=&quot;&quot; scope=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;bean id&#x3D;&quot;&quot; class&#x3D;&quot;&quot; scope&#x3D;&quot;&quot;&gt;</code></pre>
 
 
 
@@ -98,33 +127,69 @@
 <p>​    分类</p>
 <p>​        简单值：</p>
 <p>​        集合    </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=&quot;list&quot;&gt;</span><br><span class="line">    &lt;list&gt;</span><br><span class="line">        &lt;value&gt;测试一下&lt;/value&gt;</span><br><span class="line">        &lt;value&gt;集合的赋值&lt;/value&gt;</span><br><span class="line">    &lt;/list&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;property name&#x3D;&quot;list&quot;&gt;
+    &lt;list&gt;
+        &lt;value&gt;测试一下&lt;&#x2F;value&gt;
+        &lt;value&gt;集合的赋值&lt;&#x2F;value&gt;
+    &lt;&#x2F;list&gt;
+&lt;&#x2F;property&gt;</code></pre>
 
 <p>​    </p>
 <p>​        </p>
-<h4 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 自动扫描模式 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;cn.gok&quot;&gt;&lt;/context:component-scan&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h4><pre class="language-none"><code class="language-none">&lt;!-- 自动扫描模式 --&gt;
+    &lt;context:component-scan base-package&#x3D;&quot;cn.gok&quot;&gt;&lt;&#x2F;context:component-scan&gt;</code></pre>
 
 <p>base-package=“要扫哪个包就写哪个”</p>
 <p>然后要放入的类上面加@Component（“‘id”）</p>
 <p>然后在每一个属性上面加上@Value(“值”)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;dataSource&quot;)</span><br><span class="line">public class JDBCData &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;com.mysql.jdbc.Driver&quot;)</span><br><span class="line">    private String driverClass;</span><br><span class="line">    @Value(&quot;jdbc:mysql://localhost:3306/test01?serverTimezone=UTC&quot;)</span><br><span class="line">    private String jdbcUrl;</span><br><span class="line">    @Value(&quot;root&quot;)</span><br><span class="line">    private String user;</span><br><span class="line">    @Value(&quot;123&quot;)</span><br><span class="line">    private String password;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">@Component(&quot;dataSource&quot;)
+public class JDBCData &#123;
+
+    @Value(&quot;com.mysql.jdbc.Driver&quot;)
+    private String driverClass;
+    @Value(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test01?serverTimezone&#x3D;UTC&quot;)
+    private String jdbcUrl;
+    @Value(&quot;root&quot;)
+    private String user;
+    @Value(&quot;123&quot;)
+    private String password;</code></pre>
 
 
 
 <h4 id="进一步自动化"><a href="#进一步自动化" class="headerlink" title="进一步自动化"></a>进一步自动化</h4><p>​    在resources包里面新建文件 db.properties</p>
 <p>​    再db属性文件里面写上属性值  *<strong>不用引号不用引号不用引号</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">driverClass = com.mysql.jdbc.Driver</span><br><span class="line">jdbcUrl = jdbc:mysql://localhost:3306/test01?serverTimezone=UTC</span><br><span class="line">user = root</span><br><span class="line">password = 123</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">driverClass &#x3D; com.mysql.jdbc.Driver
+jdbcUrl &#x3D; jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test01?serverTimezone&#x3D;UTC
+user &#x3D; root
+password &#x3D; 123</code></pre>
 
 <p>然后把类上面的属性的注释更改成固定格式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;#&#123;conf[&#x27;driverClass&#x27;]&#125;&quot;)</span><br><span class="line">private String driverClass;</span><br><span class="line">@Value(&quot;#&#123;conf[&#x27;jdbcUrl&#x27;]&#125;&quot;)</span><br><span class="line">private String jdbcUrl;</span><br><span class="line">@Value(&quot;#&#123;conf[&#x27;user&#x27;]&#125;&quot;)</span><br><span class="line">private String user;</span><br><span class="line">@Value(&quot;#&#123;conf[&#x27;password&#x27;]&#125;&quot;)</span><br><span class="line">private String password;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">@Value(&quot;#&#123;conf[&#39;driverClass&#39;]&#125;&quot;)
+private String driverClass;
+@Value(&quot;#&#123;conf[&#39;jdbcUrl&#39;]&#125;&quot;)
+private String jdbcUrl;
+@Value(&quot;#&#123;conf[&#39;user&#39;]&#125;&quot;)
+private String user;
+@Value(&quot;#&#123;conf[&#39;password&#39;]&#125;&quot;)
+private String password;</code></pre>
 
 <p>最后再beans文件里面加上读取属性配置文件的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 自动扫描模式 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;cn.gok&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=&quot;conf&quot; class=&quot;org.springframework.beans.factory.config.PropertiesFactoryBean&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;locations&quot;&gt;</span><br><span class="line">            &lt;list&gt;</span><br><span class="line">            &lt;value&gt;classpath:db.properties&lt;/value&gt;</span><br><span class="line">            &lt;/list&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;!-- 自动扫描模式 --&gt;
+    &lt;context:component-scan base-package&#x3D;&quot;cn.gok&quot;&gt;&lt;&#x2F;context:component-scan&gt;
+
+    &lt;bean id&#x3D;&quot;conf&quot; class&#x3D;&quot;org.springframework.beans.factory.config.PropertiesFactoryBean&quot;&gt;
+        &lt;property name&#x3D;&quot;locations&quot;&gt;
+            &lt;list&gt;
+            &lt;value&gt;classpath:db.properties&lt;&#x2F;value&gt;
+            &lt;&#x2F;list&gt;
+        &lt;&#x2F;property&gt;
+    &lt;&#x2F;bean&gt;</code></pre>
 
 
 
 <p><strong>如果要两个bean互相调用 就在要调用的属性上加上@Autowired</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private JDBCData jdbcData;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">@Autowired
+private JDBCData jdbcData;</code></pre>
 
 
 

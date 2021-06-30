@@ -39,16 +39,98 @@
 <span id="more"></span>
 
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>先导入web驱动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- JAVA WEB 驱动 --&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;3.0.1&lt;/version&gt;</span><br><span class="line">   &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;jsp-api&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">   &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;jstl&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;jstl&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;1.2&lt;/version&gt;</span><br><span class="line">   &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;taglibs&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;standard&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;1.1.2&lt;/version&gt;</span><br><span class="line">   &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;!-- End : JAVA WEB 驱动 --&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;!-- JAVA WEB 驱动 --&gt;
+ &lt;dependency&gt;
+   &lt;groupId&gt;javax.servlet&lt;&#x2F;groupId&gt;
+   &lt;artifactId&gt;javax.servlet-api&lt;&#x2F;artifactId&gt;
+   &lt;version&gt;3.0.1&lt;&#x2F;version&gt;
+   &lt;scope&gt;provided&lt;&#x2F;scope&gt;
+ &lt;&#x2F;dependency&gt;
+ &lt;dependency&gt;
+   &lt;groupId&gt;javax.servlet.jsp&lt;&#x2F;groupId&gt;
+   &lt;artifactId&gt;jsp-api&lt;&#x2F;artifactId&gt;
+   &lt;version&gt;2.2&lt;&#x2F;version&gt;
+   &lt;scope&gt;provided&lt;&#x2F;scope&gt;
+ &lt;&#x2F;dependency&gt;
+ &lt;dependency&gt;
+   &lt;groupId&gt;jstl&lt;&#x2F;groupId&gt;
+   &lt;artifactId&gt;jstl&lt;&#x2F;artifactId&gt;
+   &lt;version&gt;1.2&lt;&#x2F;version&gt;
+   &lt;scope&gt;provided&lt;&#x2F;scope&gt;
+ &lt;&#x2F;dependency&gt;
+ &lt;dependency&gt;
+   &lt;groupId&gt;taglibs&lt;&#x2F;groupId&gt;
+   &lt;artifactId&gt;standard&lt;&#x2F;artifactId&gt;
+   &lt;version&gt;1.1.2&lt;&#x2F;version&gt;
+   &lt;scope&gt;provided&lt;&#x2F;scope&gt;
+ &lt;&#x2F;dependency&gt;
+ &lt;!-- End : JAVA WEB 驱动 --&gt;</code></pre>
 
 <p>再导入SpringMVC框架  （springFrameWork和json自动转换框架）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- springmvc 框架 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!-- json 自动转换框架,ajax 用,具体@ResponseBody 注解时使用 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.9.9.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;!-- springmvc 框架 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;5.1.8.RELEASE&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;
+&lt;!-- json 自动转换框架,ajax 用,具体@ResponseBody 注解时使用 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.fasterxml.jackson.core&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;jackson-databind&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;2.9.9.2&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;</code></pre>
 
 <p>然后配置web.xml</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span><br><span class="line">           xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">           xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span><br><span class="line">http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span><br><span class="line">           version=&quot;4.0&quot;</span><br><span class="line">           metadata-complete=&quot;true&quot;&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">      &lt;servlet-name&gt;SpringMVCDispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">      &lt;servlet-class&gt;</span><br><span class="line">        org.springframework.web.servlet.DispatcherServlet</span><br><span class="line">      &lt;/servlet-class&gt;</span><br><span class="line">      &lt;!-- 配置初始化参数，用于读取 SpringMVC 的配置文件 --&gt;</span><br><span class="line">      &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;classpath:SpringMVC.xml&lt;/param-value&gt;</span><br><span class="line">      &lt;/init-param&gt;</span><br><span class="line">      &lt;!-- 配置 servlet 的对象的创建时间点：应用加载时创建。</span><br><span class="line">      取值只能是非 0 正整数，表示启动顺序 --&gt;</span><br><span class="line">      &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">      &lt;servlet-name&gt;SpringMVCDispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">      &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">      &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">      &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">      &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;UTF-8&lt;/param-value&gt;</span><br><span class="line">      &lt;/init-param&gt;</span><br><span class="line">    &lt;/filter&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">      &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">      &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/filter-mapping&gt;</span><br><span class="line">  &lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">  &lt;web-app xmlns&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&quot;
+           xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;
+           xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee
+http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_4_0.xsd&quot;
+           version&#x3D;&quot;4.0&quot;
+           metadata-complete&#x3D;&quot;true&quot;&gt;
+    &lt;servlet&gt;
+      &lt;servlet-name&gt;SpringMVCDispatcherServlet&lt;&#x2F;servlet-name&gt;
+      &lt;servlet-class&gt;
+        org.springframework.web.servlet.DispatcherServlet
+      &lt;&#x2F;servlet-class&gt;
+      &lt;!-- 配置初始化参数，用于读取 SpringMVC 的配置文件 --&gt;
+      &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;&#x2F;param-name&gt;
+        &lt;param-value&gt;classpath:SpringMVC.xml&lt;&#x2F;param-value&gt;
+      &lt;&#x2F;init-param&gt;
+      &lt;!-- 配置 servlet 的对象的创建时间点：应用加载时创建。
+      取值只能是非 0 正整数，表示启动顺序 --&gt;
+      &lt;load-on-startup&gt;1&lt;&#x2F;load-on-startup&gt;
+    &lt;&#x2F;servlet&gt;
+    &lt;servlet-mapping&gt;
+      &lt;servlet-name&gt;SpringMVCDispatcherServlet&lt;&#x2F;servlet-name&gt;
+      &lt;url-pattern&gt;&#x2F;&lt;&#x2F;url-pattern&gt;
+    &lt;&#x2F;servlet-mapping&gt;
+    &lt;filter&gt;
+      &lt;filter-name&gt;encodingFilter&lt;&#x2F;filter-name&gt;
+      &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;&#x2F;filter-class&gt;
+      &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;&#x2F;param-name&gt;
+        &lt;param-value&gt;UTF-8&lt;&#x2F;param-value&gt;
+      &lt;&#x2F;init-param&gt;
+    &lt;&#x2F;filter&gt;
+    &lt;filter-mapping&gt;
+      &lt;filter-name&gt;encodingFilter&lt;&#x2F;filter-name&gt;
+      &lt;url-pattern&gt;&#x2F;&lt;&#x2F;url-pattern&gt;
+    &lt;&#x2F;filter-mapping&gt;
+  &lt;&#x2F;web-app&gt;</code></pre>
 
 <p>然后创建SpringMVC.xml并且配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    包扫描，有注解才能读取--&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.jcc&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置视图解析器 --&gt;</span><br><span class="line">    &lt;bean</span><br><span class="line">            class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/pages/&quot;&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;!--    包扫描，有注解才能读取--&gt;
+    &lt;context:component-scan base-package&#x3D;&quot;com.jcc&quot;&gt;&lt;&#x2F;context:component-scan&gt;
+
+
+    &lt;!-- 配置视图解析器 --&gt;
+    &lt;bean
+            class&#x3D;&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name&#x3D;&quot;prefix&quot; value&#x3D;&quot;&#x2F;WEB-INF&#x2F;pages&#x2F;&quot;&gt;&lt;&#x2F;property&gt;
+        &lt;property name&#x3D;&quot;suffix&quot; value&#x3D;&quot;.jsp&quot;&gt;&lt;&#x2F;property&gt;
+    &lt;&#x2F;bean&gt;
+&lt;&#x2F;beans&gt;</code></pre>
 
 
 
@@ -66,11 +148,65 @@
 <p>​                        简单说就是 进入了JAVA方法 但是找不到返回页面的路径</p>
 <p>传值</p>
 <p>controller</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package cn.gok;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line">import org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/hello&quot;)</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/say&quot;)</span><br><span class="line">    public void say(String word)&#123;</span><br><span class="line">        System.out.println(&quot;springMVC框架 你好&quot;+word);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/dance&quot;)</span><br><span class="line">    public void dance()&#123;</span><br><span class="line">        System.out.println(&quot;跳舞&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    @RequestMapping(&quot;/jump&quot;)</span><br><span class="line">    public void jump(@RequestParam(value = &quot;a&quot;) String[] a)&#123;</span><br><span class="line">        System.out.println(a[0] + &quot; &quot; + a[1]);</span><br><span class="line">    &#125;</span><br><span class="line">    @RequestMapping(&quot;/pagea&quot;)</span><br><span class="line">    public ModelAndView pagea()&#123;</span><br><span class="line">        ModelAndView m = new ModelAndView();</span><br><span class="line">        m.setViewName(&quot;a&quot;);</span><br><span class="line">        return m;</span><br><span class="line">    &#125;</span><br><span class="line">    @RequestMapping(&quot;/person&quot;)</span><br><span class="line">    public void person1(Person person)&#123;</span><br><span class="line">        System.out.println(person.getName() + &quot; &quot; + person.getAge() + &quot;&quot; + person.getStudent().getLevel() );</span><br><span class="line">        System.out.println(person.getList().size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">package cn.gok;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping(&quot;&#x2F;hello&quot;)
+public class HelloController &#123;
+
+    @RequestMapping(&quot;&#x2F;say&quot;)
+    public void say(String word)&#123;
+        System.out.println(&quot;springMVC框架 你好&quot;+word);
+    &#125;
+
+    @RequestMapping(&quot;&#x2F;dance&quot;)
+    public void dance()&#123;
+        System.out.println(&quot;跳舞&quot;);
+    &#125;
+    @RequestMapping(&quot;&#x2F;jump&quot;)
+    public void jump(@RequestParam(value &#x3D; &quot;a&quot;) String[] a)&#123;
+        System.out.println(a[0] + &quot; &quot; + a[1]);
+    &#125;
+    @RequestMapping(&quot;&#x2F;pagea&quot;)
+    public ModelAndView pagea()&#123;
+        ModelAndView m &#x3D; new ModelAndView();
+        m.setViewName(&quot;a&quot;);
+        return m;
+    &#125;
+    @RequestMapping(&quot;&#x2F;person&quot;)
+    public void person1(Person person)&#123;
+        System.out.println(person.getName() + &quot; &quot; + person.getAge() + &quot;&quot; + person.getStudent().getLevel() );
+        System.out.println(person.getList().size());
+    &#125;
+&#125;</code></pre>
 
 <p>可能要bean</p>
 <p>jsp页面：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--测试1 接收参数 调用方法--%&gt;</span><br><span class="line">&lt;a href=&quot;hello/say?word=你好&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;%--测试2 表单获取值--%&gt;</span><br><span class="line">&lt;form action=&quot;hello/jump&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    第一个值&lt;input type=&quot;text&quot; name=&quot;a&quot;&gt;</span><br><span class="line">    第二个值&lt;input type=&quot;text&quot; name=&quot;a&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;%--测试3 跳转页面--%&gt;</span><br><span class="line">&lt;a href=&quot;hello/pagea&quot;&gt;测试3&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;%--测试4 传对象--%&gt;</span><br><span class="line">&lt;form action=&quot;hello/person&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    名字&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;</span><br><span class="line">    年龄&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;</span><br><span class="line">    等级&lt;input type=&quot;text&quot; name=&quot;student.level&quot;&gt;</span><br><span class="line">    列表1&lt;input type=&quot;text&quot; name=&quot;list[0].level&quot;&gt;</span><br><span class="line">    列表2&lt;input type=&quot;text&quot; name=&quot;list[1].level&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;%--测试1 接收参数 调用方法--%&gt;
+&lt;a href&#x3D;&quot;hello&#x2F;say?word&#x3D;你好&quot;&gt;链接&lt;&#x2F;a&gt;
+&lt;%--测试2 表单获取值--%&gt;
+&lt;form action&#x3D;&quot;hello&#x2F;jump&quot; method&#x3D;&quot;get&quot;&gt;
+    第一个值&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;a&quot;&gt;
+    第二个值&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;a&quot;&gt;
+    &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;
+&lt;&#x2F;form&gt;
+&lt;%--测试3 跳转页面--%&gt;
+&lt;a href&#x3D;&quot;hello&#x2F;pagea&quot;&gt;测试3&lt;&#x2F;a&gt;
+
+&lt;%--测试4 传对象--%&gt;
+&lt;form action&#x3D;&quot;hello&#x2F;person&quot; method&#x3D;&quot;get&quot;&gt;
+    名字&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot;&gt;
+    年龄&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;age&quot;&gt;
+    等级&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;student.level&quot;&gt;
+    列表1&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;list[0].level&quot;&gt;
+    列表2&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;list[1].level&quot;&gt;
+    &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;
+&lt;&#x2F;form&gt;</code></pre>
 
 
 
