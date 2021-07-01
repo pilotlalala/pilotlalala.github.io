@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="派洛特"><meta name="copyright" content="派洛特"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>vue | 派洛特的小站</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"pilotlalala.github.io","root":"/","title":"亲爱的派洛特","version":"1.6.1","mode":"dark","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn/?c=d&c=h&c=i&c=j&c=k","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="安装和引入直接用对vue.js进行引入 下载vue.js  在html文件中用进行引入  也可以使用cdn的的引入   实例         &lt;div id&#x3D;&quot;app&quot;&gt;             &amp;#123;&amp;#123;a&amp;#125;&amp;#125;         &lt;&#x2F;div&gt;         &lt;script type&#x3D;&quot;text&#x2F;java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue">
+<meta property="og:url" content="https://pilotlalala.github.io/2021/06/19/JavaWEB/vue/index.html">
+<meta property="og:site_name" content="派洛特的小站">
+<meta property="og:description" content="安装和引入直接用对vue.js进行引入 下载vue.js  在html文件中用进行引入  也可以使用cdn的的引入   实例         &lt;div id&#x3D;&quot;app&quot;&gt;             &amp;#123;&amp;#123;a&amp;#125;&amp;#125;         &lt;&#x2F;div&gt;         &lt;script type&#x3D;&quot;text&#x2F;java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/articleImg/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="article:published_time" content="2021-06-18T17:12:52.000Z">
+<meta property="article:modified_time" content="2021-06-22T08:48:30.958Z">
+<meta property="article:author" content="派洛特">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/articleImg/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="派洛特"><img width="96" loading="lazy" src="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/amiya.jpg" alt="派洛特"><span class="site-author-status" title="pilotlalala">😆</span></a><div class="site-author-name"><a href="/about/">派洛特</a></div><a class="site-name" href="/about/site.html">派洛特的小站</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">34</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">7</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">5</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2072281836&amp;site=qq&amp;menu=yes" title="qq:2072281836" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/pilotlalala" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="2072281836@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://weibo.com/u/6053823030" title="微博" target="_blank" style="color:#E6162D"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=131315515" title="网易云音乐" target="_blank" style="color:#C10D0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/13604434" title="哔哩哔哩动画" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/about/" title="是个男球" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">安装和引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E7%94%A8%E5%AF%B9vue-js%E8%BF%9B%E8%A1%8C%E5%BC%95%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">直接用对vue.js进行引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%9E%E4%BE%8B%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">一些实例和方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">Vue生命周期 钩子函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate"><span class="toc-number">2.1.</span> <span class="toc-text">beforeCreate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created"><span class="toc-number">2.2.</span> <span class="toc-text">created</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeMount"><span class="toc-number">2.3.</span> <span class="toc-text">beforeMount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mounted"><span class="toc-number">2.4.</span> <span class="toc-text">mounted</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeUpdate"><span class="toc-number">2.5.</span> <span class="toc-text">beforeUpdate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#updated"><span class="toc-number">2.6.</span> <span class="toc-text">updated</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#activated"><span class="toc-number">2.7.</span> <span class="toc-text">activated</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deactivated"><span class="toc-number">2.8.</span> <span class="toc-text">deactivated</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeDestroy"><span class="toc-number">2.9.</span> <span class="toc-text">beforeDestroy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#destroyed"><span class="toc-number">2.10.</span> <span class="toc-text">destroyed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#errorCaptured"><span class="toc-number">2.11.</span> <span class="toc-text">errorCaptured</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js%E7%9A%84%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Vue.js的模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%80%BC"><span class="toc-number">3.1.</span> <span class="toc-text">插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8Bhtml"><span class="toc-number">3.2.</span> <span class="toc-text">原始html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text">特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E5%B1%9E%E6%80%A7"><span class="toc-number">3.3.1.</span> <span class="toc-text">动态绑定属性:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8javascript%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.3.2.</span> <span class="toc-text">使用javascript的表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97"><span class="toc-number">3.3.3.</span> <span class="toc-text">三元运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">3.3.4.</span> <span class="toc-text">复杂的函数运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-if"><span class="toc-number">4.1.</span> <span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">4.2.1.</span> <span class="toc-text">动态参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E7%9A%84%E5%80%BC%E7%9A%84%E7%BA%A6%E6%9D%9F"><span class="toc-number">4.2.2.</span> <span class="toc-text">对动态参数的值的约束</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">4.3.</span> <span class="toc-text">修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stop-%E6%89%A7%E8%A1%8C%E5%AE%8C%E4%B9%8B%E5%90%8E%E5%81%9C%E4%B8%8B%E6%9D%A5"><span class="toc-number">4.3.1.</span> <span class="toc-text">.stop:执行完之后停下来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E4%B8%8Estyle%E8%BF%9B%E8%A1%8C%E7%BB%91%E5%AE%9A-%E5%8A%A8%E6%80%81class%E6%94%B9%E5%8F%98%E6%A0%B7%E5%BC%8F"><span class="toc-number">4.3.2.</span> <span class="toc-text">class与style进行绑定 动态class改变样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94"><span class="toc-number">4.3.3.</span> <span class="toc-text">内联</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">4.3.4.</span> <span class="toc-text">条件渲染</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-show"><span class="toc-number">4.4.</span> <span class="toc-text">v-show</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-number">5.</span> <span class="toc-text">列表渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8"><span class="toc-number">5.1.</span> <span class="toc-text">v-for遍历列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1"><span class="toc-number">5.2.</span> <span class="toc-text">v-for遍历对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%B4%E6%8A%A4%E7%8A%B6%E6%80%81"><span class="toc-number">5.2.1.</span> <span class="toc-text">维护状态</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">6.</span> <span class="toc-text">事件绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">6.2.</span> <span class="toc-text">事件修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">6.2.1.</span> <span class="toc-text">按键修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E7%A0%81"><span class="toc-number">6.2.1.1.</span> <span class="toc-text">按键码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A"><span class="toc-number">6.3.</span> <span class="toc-text">表单输入绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#v-model%E5%92%8Cinput%E5%92%8CtextArea%E7%BB%91%E5%AE%9A"><span class="toc-number">6.3.1.</span> <span class="toc-text">v-model和input和textArea绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E9%80%89%E6%A1%86"><span class="toc-number">6.3.2.</span> <span class="toc-text">复选框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E9%80%89%E6%8C%89%E9%92%AE"><span class="toc-number">6.3.3.</span> <span class="toc-text">单选按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8-v-for-%E6%B8%B2%E6%9F%93%E7%9A%84%E5%8A%A8%E6%80%81%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="toc-number">6.3.4.</span> <span class="toc-text">用 v-for 渲染的动态选项：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">7.</span> <span class="toc-text">组件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E5%8F%AF%E4%BB%A5%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6-%E5%B9%B6%E4%B8%94%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%A4%8D%E7%94%A8"><span class="toc-number">7.1.</span> <span class="toc-text">Vue可以创建组件 并且可以被复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="toc-number">7.2.</span> <span class="toc-text">组件注册</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">单文件组件</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://pilotlalala.github.io/2021/06/19/JavaWEB/vue/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="派洛特"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="派洛特的小站"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">vue</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2021-06-19 01:12:52" itemprop="dateCreated datePublished" datetime="2021-06-19T01:12:52+08:00">2021-06-19</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <span class="post-meta-icon-text">更新于</span> <time title="修改时间：2021-06-22 16:48:30" itemprop="dateModified" datetime="2021-06-22T16:48:30+08:00">2021-06-22</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">学习</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0/vue/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">vue</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/vue/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">vue</span></a></span></div><div class="post-author"><span class="author-name">派洛特</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="安装和引入"><a href="#安装和引入" class="headerlink" title="安装和引入"></a>安装和引入</h2><h3 id="直接用对vue-js进行引入"><a href="#直接用对vue-js进行引入" class="headerlink" title="直接用对vue.js进行引入"></a>直接用对vue.js进行引入</h3><ul>
+<li><p>下载vue.js</p>
+</li>
+<li><p>在html文件中用进行引入</p>
+<p> 也可以使用cdn的的引入</p>
+</li>
+</ul>
+<p>实例</p>
+<pre><code>        &lt;div id=&quot;app&quot;&gt;
+            &#123;&#123;a&#125;&#125;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var data = &#123;a:1&#125;
+            var vm = new Vue(&#123;
+                el:&quot;#app&quot;,
+                data:data
+            &#125;);
+            data.a = &quot;lalala&quot;//响应式 如果不让他相应要用Object.freeze(vm)方法
+        &lt;/script&gt;
+</code></pre>
+<span id="more"></span>
+
+<h3 id="一些实例和方法"><a href="#一些实例和方法" class="headerlink" title="一些实例和方法"></a>一些实例和方法</h3><p>变量前加上$符号也是可以用的,比如说data.a可以替换成vm.$data.a</p>
+<p>$watch方法 用来查看变量的变化前后</p>
+<pre><code>        &lt;script type=&quot;text/javascript&quot;&gt;
+            var data = &#123;
+                a: 1
+            &#125;
+            var vm = new Vue(&#123;
+                el: &quot;#app&quot;,
+                data: data
+            &#125;);
+            vm.$watch(&#39;a&#39;,function(newVal, oldVal) &#123;
+                console.log(newVal,oldVal);
+            &#125;)
+            data.a = &quot;lalala&quot;
+        &lt;/script&gt;
+</code></pre>
+<h2 id="Vue生命周期-钩子函数"><a href="#Vue生命周期-钩子函数" class="headerlink" title="Vue生命周期 钩子函数"></a>Vue生命周期 钩子函数</h2><p>生命周期函数需要在vue对象中以属性的方式进行声明</p>
+<p>所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据，对 property 和方法进行运算。这意味着你不能使用箭头函数来定义一个生命周期方法 (例如 created: () =&gt; this.fetchTodos())。这是因为箭头函数绑定了父上下文，因此 this 与你期待的 Vue 实例不同，this.fetchTodos 的行为未定义。</p>
+<p>用人话来讲就是 生命周期函数需要用到this 但是箭头函数用不了this 所以不行</p>
+<h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。</li>
+<li>简单来说就是页面创建之前调用</li>
+</ul>
+<h3 id="created"><a href="#created" class="headerlink" title="created"></a>created</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。</li>
+<li>创建了实例 但是el还未挂载</li>
+</ul>
+<h3 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>在挂载开始之前被调用：相关的 render 函数首次被调用。<br>该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。<br>注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick：<pre><code>mounted: function () &#123;
+  this.$nextTick(function () &#123;
+    // Code that will run only after the
+    // entire view has been rendered
+  &#125;)
+&#125;
+</code></pre>
+该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。<br>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。<br>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。<br>注意 updated 不会保证所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以在 updated 里使用 vm.$nextTick：<pre><code>updated: function () &#123;
+  this.$nextTick(function () &#123;
+    // Code that will run only after the
+    // entire view has been re-rendered
+  &#125;)
+&#125;
+</code></pre>
+该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="activated"><a href="#activated" class="headerlink" title="activated"></a>activated</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>被 keep-alive 缓存的组件激活时调用。<br>该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：<ul>
+<li>构建组件 - keep-alive</li>
+<li>动态组件 - keep-alive</li>
+</ul>
+</li>
+</ul>
+<h3 id="deactivated"><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>被 keep-alive 缓存的组件停用时调用。<br>该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：<ul>
+<li>构建组件 - keep-alive</li>
+<li>动态组件 - keep-alive</li>
+</ul>
+</li>
+</ul>
+<h3 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>实例销毁之前调用。在这一步，实例仍然完全可用。<br>该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h3><ul>
+<li>类型：Function</li>
+<li>详细：<br>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。<br>该钩子在服务器端渲染期间不被调用。</li>
+<li>参考：生命周期图示</li>
+</ul>
+<h3 id="errorCaptured"><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h3><p>2.5.0+ 新增</p>
+<ul>
+<li>类型：(err: Error, vm: Component, info: string) =&gt; ?boolean</li>
+<li>详细：<br>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。<br>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其它内容就很重要；不然该组件可能会进入一个无限的渲染循环。<br>错误传播规则<ul>
+<li>默认情况下，如果全局的 config.errorHandler 被定义，所有的错误仍会发送它，因此这些错误仍然会向单一的分析服务的地方进行汇报。</li>
+<li>如果一个组件的继承或父级从属链路中存在多个 errorCaptured 钩子，则它们将会被相同的错误逐个唤起。</li>
+<li>如果此 errorCaptured 钩子自身抛出了一个错误，则这个新错误和原本被捕获的错误都会发送给全局的 config.errorHandler。</li>
+<li>一个 errorCaptured 钩子能够返回 false 以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其它任何会被这个错误唤起的 errorCaptured 钩子和全局的 config.errorHandler。</li>
+</ul>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/articleImg/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="img" style="zoom:200%;" / loading="lazy">
+
+
+
+<h2 id="Vue-js的模板语法"><a href="#Vue-js的模板语法" class="headerlink" title="Vue.js的模板语法"></a>Vue.js的模板语法</h2><h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><ul>
+<li><p>mustaches最常见的就是,并且是响应式的</p>
+</li>
+<li><p>v-once属性可以一次性插值 数据改变不会相应</p>
+<pre class="language-none"><code class="language-none">&lt;span v-once&gt;&lt;&#x2F;span&gt;</code></pre></li>
+</ul>
+<h3 id="原始html"><a href="#原始html" class="headerlink" title="原始html"></a>原始html</h3><p>下面的data有一个变量的值是<span>块</p>
+<pre><code>&lt;p v-html = &quot;rawhtml&quot;&gt;   &lt;/p&gt;
+</code></pre>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><h4 id="动态绑定属性"><a href="#动态绑定属性" class="headerlink" title="动态绑定属性:"></a>动态绑定属性:</h4><pre><code>&lt;span v-bind:id=&quot;&quot;&gt;&lt;/span&gt;      
+</code></pre>
+<h4 id="使用javascript的表达式"><a href="#使用javascript的表达式" class="headerlink" title="使用javascript的表达式"></a>使用javascript的表达式</h4><pre><code>&#123;&#123;number+1&#125;&#125;
+</code></pre>
+<h4 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h4><pre><code>&#123;&#123;ok?'Yes':'NO'&#125;&#125;//如果data里面ok的值是false就输出no,否则就输出yes
+</code></pre>
+<h4 id="复杂的函数运算"><a href="#复杂的函数运算" class="headerlink" title="复杂的函数运算"></a>复杂的函数运算</h4><pre><code>&#123;&#123; message.split('').reverse().join('') &#125;&#125;//拆分成字母然后反序然后结合
+</code></pre>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><pre><code>&lt;p v-if=&quot;seen&quot;&gt;&lt;/p&gt;
+...
+data:&#123;
+    seen:true
+&#125;
+</code></pre>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示。例如，v-bind 指令可以用于响应式地更新 HTML attribute</p>
+<p>在这里 href 是参数，告知 v-bind 指令将该元素的 href attribute 与表达式 url 的值绑定。</p>
+<p>另一个例子是 v-on 指令，它用于监听 DOM 事件</p>
+<h4 id="动态参数"><a href="#动态参数" class="headerlink" title="动态参数"></a>动态参数</h4><p>2.6.0 新增</p>
+<p>从 2.6.0 开始，可以用方括号括起来的 JavaScript 表达式作为一个指令的参数：</p>
+<pre><code>&lt;!--
+注意，参数表达式的写法存在一些约束，如之后的“对动态参数表达式的约束”章节所述。
+--&gt;
+&lt;a v-bind:[attributeName]=&quot;url&quot;&gt; ... &lt;/a&gt;
+</code></pre>
+<p>这里的 attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 data property attributeName，其值为 “href”，那么这个绑定将等价于 v-bind:href。</p>
+<p>同样地，你可以使用动态参数为一个动态的事件名绑定处理函数：</p>
+<pre><code>&lt;a v-on:[eventName]=&quot;doSomething&quot;&gt; ... &lt;/a&gt;
+</code></pre>
+<p>在这个示例中，当 eventName 的值为 “focus” 时，v-on:[eventName] 将等价于 v-on:focus。</p>
+<h4 id="对动态参数的值的约束"><a href="#对动态参数的值的约束" class="headerlink" title="对动态参数的值的约束"></a>对动态参数的值的约束</h4><p>动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。</p>
+<p>对动态参数表达式的约束</p>
+<p>动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的。例如：</p>
+<pre><code>&lt;!-- 这会触发一个编译警告 --&gt;
+&lt;a v-bind:[&#39;foo&#39; + bar]=&quot;value&quot;&gt; ... &lt;/a&gt;
+</code></pre>
+<p>变通的办法是使用没有空格或引号的表达式，或用计算属性替代这种复杂表达式。</p>
+<p>在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写：</p>
+<pre><code>&lt;!--
+在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。
+除非在实例中有一个名为“someattr”的 property，否则代码不会工作。
+--&gt;
+&lt;a v-bind:[someAttr]=&quot;value&quot;&gt; ... &lt;/a&gt;
+</code></pre>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()</p>
+<pre><code>&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;...&lt;/form&gt;
+</code></pre>
+<h4 id="stop-执行完之后停下来"><a href="#stop-执行完之后停下来" class="headerlink" title=".stop:执行完之后停下来"></a>.stop:执行完之后停下来</h4><pre><code>&lt;div @click.stop=&quot;click2&quot;&gt;&lt;/div&gt;
+...
+methods:&#123;
+    click2:function()&#123;
+            
+    &#125;,
+&#125;
+</code></pre>
+<h4 id="class与style进行绑定-动态class改变样式"><a href="#class与style进行绑定-动态class改变样式" class="headerlink" title="class与style进行绑定 动态class改变样式"></a>class与style进行绑定 动态class改变样式</h4><p>核心:v-bind:class=”{active:isactive}”下面active为true或者false来改变样式 可以多个class</p>
+<pre><code>&lt;div v-bind:class=&quot;&#123; active: isActive &#125;&quot;&gt;&lt;/div&gt;
+
+&lt;div
+  class=&quot;static&quot;
+  v-bind:class=&quot;&#123; active: isActive, &#39;text-danger&#39;: hasError &#125;&quot;
+&gt;&lt;/div&gt;
+
+data: &#123;
+  isActive: true,
+  hasError: false
+&#125;
+</code></pre>
+<h4 id="内联"><a href="#内联" class="headerlink" title="内联"></a>内联</h4><p>也就是把class改成style,其他同理</p>
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><p>v-if   v-else v-else-if </p>
+<pre><code>            &lt;div v-if=&quot;type === &#39;A&#39;&quot;&gt;
+              A
+            &lt;/div&gt;
+            &lt;div v-else-if=&quot;type === &#39;B&#39;&quot;&gt;
+              B
+            &lt;/div&gt;
+            &lt;div v-else-if=&quot;type === &#39;C&#39;&quot;&gt;
+              C
+            &lt;/div&gt;
+            &lt;div v-else&gt;
+              Not A/B/C
+            &lt;/div&gt;
+</code></pre>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>另一个用于根据条件展示元素的选项是 v-show 指令。用法大致一样：</p>
+<pre><code>&lt;h1 v-show=&quot;ok&quot;&gt;Hello!&lt;/h1&gt;
+</code></pre>
+<p>不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS property display。</p>
+<p>注意，v-show 不支持 <code>&lt;template&gt;</code> 元素，也不支持 v-else。</p>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for遍历列表"><a href="#v-for遍历列表" class="headerlink" title="v-for遍历列表"></a>v-for遍历列表</h3><pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in items<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    &#123;&#123; item.message &#125;&#125;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+
+  var example1 = new Vue(&#123;
+      el: '#example-1',
+      data: &#123;
+        items: [
+          &#123; message: 'Foo' &#125;,
+          &#123; message: 'Bar' &#125;
+        ]
+      &#125;  &#125;)</code></pre>
+
+<p>在 v-for 块中，我们可以访问所有父作用域的 property。v-for 还支持一个可选的第二个参数，即当前项的索引。</p>
+<pre><code>&lt;ul id=&quot;example-2&quot;&gt;
+  &lt;li v-for=&quot;(item, index) in items&quot;&gt;//第二个参数返回的是索引
+    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+var example2 = new Vue(&#123;
+  el: &#39;#example-2&#39;,
+  data: &#123;
+    parentMessage: &#39;Parent&#39;,
+    items: [
+      &#123; message: &#39;Foo&#39; &#125;,
+      &#123; message: &#39;Bar&#39; &#125;
+    ]
+  &#125;
+&#125;)
+</code></pre>
+<h3 id="v-for遍历对象"><a href="#v-for遍历对象" class="headerlink" title="v-for遍历对象"></a>v-for遍历对象</h3><p>你也可以用 v-for 来遍历一个对象的 property。</p>
+<pre><code>&lt;ul id=&quot;v-for-object&quot; class=&quot;demo&quot;&gt;
+  &lt;li v-for=&quot;value in object&quot;&gt;
+    &#123;&#123; value &#125;&#125;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+new Vue(&#123;
+  el: &#39;#v-for-object&#39;,
+  data: &#123;
+    object: &#123;
+      title: &#39;How to do lists in Vue&#39;,
+      author: &#39;Jane Doe&#39;,
+      publishedAt: &#39;2016-04-10&#39;
+    &#125;
+  &#125;
+&#125;)
+</code></pre>
+<p>你也可以提供第二个的参数为 property 名称 (也就是键名)：</p>
+<pre><code>&lt;div v-for=&quot;(value, name) in object&quot;&gt;
+  &#123;&#123; name &#125;&#125;: &#123;&#123; value &#125;&#125;
+&lt;/div&gt;
+</code></pre>
+<p>还可以用第三个参数作为索引：</p>
+<pre><code>&lt;div v-for=&quot;(value, name, index) in object&quot;&gt;
+  &#123;&#123; index &#125;&#125;. &#123;&#123; name &#125;&#125;: &#123;&#123; value &#125;&#125;
+&lt;/div&gt;
+</code></pre>
+<h4 id="维护状态"><a href="#维护状态" class="headerlink" title="维护状态"></a>维护状态</h4><p>当 Vue 正在更新使用 v-for 渲染的元素列表时，它默认使用“就地更新”的策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序，而是就地更新每个元素，并且确保它们在每个索引位置正确渲染。这个类似 Vue 1.x 的 track-by=”$index”。</p>
+<p>这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出。</p>
+<p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key attribute：</p>
+<pre><code>&lt;div v-for=&quot;item in items&quot; v-bind:key=&quot;item.id&quot;&gt;
+  &lt;!-- 内容 --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>建议尽可能在使用 v-for 时提供 key attribute，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
+<p>因为它是 Vue 识别节点的一个通用机制，key 并不仅与 v-for 特别关联。后面我们将在指南中看到，它还具有其它用途。</p>
+<p>不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。</p>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><pre><code>&lt;div id=&quot;example-2&quot;&gt;
+  &lt;!-- `greet` 是在下面定义的方法名 --&gt;
+  &lt;button v-on:click=&quot;greet&quot;&gt;Greet&lt;/button&gt;
+&lt;/div&gt;
+
+var example2 = new Vue(&#123;
+  el: &#39;#example-2&#39;,
+  data: &#123;
+    name: &#39;Vue.js&#39;
+  &#125;,
+  // 在 `methods` 对象中定义方法
+  methods: &#123;
+    greet: function (event) &#123;
+      // `this` 在方法里指向当前 Vue 实例
+      alert(&#39;Hello &#39; + this.name + &#39;!&#39;)
+      // `event` 是原生 DOM 事件
+      if (event) &#123;
+        alert(event.target.tagName)
+      &#125;
+    &#125;
+  &#125;
+&#125;)
+
+// 也可以用 JavaScript 直接调用方法
+example2.greet() // =&gt; &#39;Hello Vue.js!&#39;
+</code></pre>
+<p>v-on:click 点击</p>
+<p>v-on:dbclick 双击</p>
+<p>等等</p>
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><p>在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p>
+<p>为了解决这个问题，Vue.js 为 v-on 提供了事件修饰符。之前提过，修饰符是由点开头的指令后缀来表示的。</p>
+<ul>
+<li><p>.stop</p>
+</li>
+<li><p>.prevent</p>
+</li>
+<li><p>.capture</p>
+</li>
+<li><p>.self</p>
+</li>
+<li><p>.once</p>
+</li>
+<li><p>.passive</p>
+  <pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 阻止单击事件继续传播 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.stop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 提交事件不再重载页面 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name"><span class="token namespace">v-on:</span>submit.prevent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onSubmit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- 修饰符可以串联 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.stop.prevent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>doThat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 只有修饰符 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name"><span class="token namespace">v-on:</span>submit.prevent</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --></span>
+<span class="token comment">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.capture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --></span>
+<span class="token comment">&lt;!-- 即事件不是从内部元素触发的 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.self</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>doThat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+<p>使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。</p>
+<p>2.1.4 新增</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 点击事件将只会触发一次 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.once</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+
+
+
+<p>2.3.0 新增</p>
+<p>Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --></span>
+<span class="token comment">&lt;!-- 而不会等待 `onScroll` 完成  --></span>
+<span class="token comment">&lt;!-- 这其中包含 `event.preventDefault()` 的情况 --></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">v-on:</span>scroll.passive</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onScroll<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+<p>这个 .passive 修饰符尤其能够提升移动端的性能。</p>
+<p>不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，.passive 会告诉浏览器你不想阻止事件的默认行为。</p>
+<h4 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h4><p>在监听键盘事件时，我们经常需要检查详细的按键。Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：</p>
+<pre><code>&lt;!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` --&gt;&lt;input v-on:keyup.enter=&quot;submit&quot;&gt;
+</code></pre>
+<p>你可以直接将 KeyboardEvent.key 暴露的任意有效按键名转换为 kebab-case 来作为修饰符。</p>
+<pre><code>&lt;input v-on:keyup.page-down=&quot;onPageDown&quot;&gt;
+</code></pre>
+<p>在上述示例中，处理函数只会在 $event.key 等于 PageDown 时被调用。</p>
+<h5 id="按键码"><a href="#按键码" class="headerlink" title="按键码"></a>按键码</h5><p>keyCode 的事件用法已经被废弃了并可能不会被最新的浏览器支持。</p>
+<p>使用 keyCode attribute 也是允许的：</p>
+<pre><code>&lt;input v-on:keyup.13=&quot;submit&quot;&gt;
+</code></pre>
+<p>为了在必要的情况下支持旧浏览器，Vue 提供了绝大多数常用的按键码的别名：</p>
+<ul>
+<li>.enter</li>
+<li>.tab</li>
+<li>.delete (捕获“删除”和“退格”键)</li>
+<li>.esc</li>
+<li>.space</li>
+<li>.up</li>
+<li>.down</li>
+<li>.left</li>
+<li>.right</li>
+</ul>
+<p>有一些按键 (.esc 以及所有的方向键) 在 IE9 中有不同的 key 值, 如果你想支持 IE9，这些内置的别名应该是首选。</p>
+<p>你还可以通过全局 config.keyCodes 对象自定义按键修饰符别名：</p>
+<pre><code>// 可以使用 
+v-on:keyup.f1`Vue.config.keyCodes.f1 = 112
+</code></pre>
+<h3 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h3><h4 id="v-model和input和textArea绑定"><a href="#v-model和input和textArea绑定" class="headerlink" title="v-model和input和textArea绑定"></a>v-model和input和textArea绑定</h4><pre><code>&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;
+
+&lt;span&gt;Multiline message is:&lt;/span&gt;&lt;p style=&quot;white-space: pre-line;&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;&lt;br&gt;&lt;textarea v-model=&quot;message&quot; placeholder=&quot;add multiple lines&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+<p>在文本区域插值 <code>&lt;textarea&gt;</code>并不会生效，应用 v-model 来代替。</p>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>单个复选框，绑定到布尔值：</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;
+&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;
+</code></pre>
+<p> false</p>
+<p>多个复选框，绑定到同一个数组：</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jack<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Jack<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkedNames<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jack<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Jack<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>john<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>John<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkedNames<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>john<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>John<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mike<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mike<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkedNames<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mike<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mike<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Checked names: &#123;&#123; checkedNames &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+
+new Vue(&#123;
+el: '...', 
+data: &#123;   
+checkedNames: []//注意这里用数组进行了绑定 
+&#125;&#125;)</code></pre>
+
+
+
+<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><pre><code>&lt;div id=&quot;example-4&quot;&gt;  
+&lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt; 
+&lt;label for=&quot;one&quot;&gt;One&lt;/label&gt;  &lt;br&gt; 
+&lt;input type=&quot;radio&quot; id=&quot;two&quot; value=&quot;Two&quot; v-model=&quot;picked&quot;&gt;  
+&lt;label for=&quot;two&quot;&gt;Two&lt;/label&gt;  &lt;br&gt; 
+&lt;span&gt;Picked: &#123;&#123; picked &#125;&#125;&lt;/span&gt;
+&lt;/div&gt;
+new Vue(&#123; 
+el: &#39;#example-4&#39;, 
+data: &#123;  
+picked: &#39;&#39;  
+&#125;&#125;)
+</code></pre>
+<h4 id="用-v-for-渲染的动态选项："><a href="#用-v-for-渲染的动态选项：" class="headerlink" title="用 v-for 渲染的动态选项："></a>用 v-for 渲染的动态选项：</h4><pre><code>&lt;select v-model=&quot;selected&quot;&gt;  
+&lt;option v-for=&quot;option in options&quot; v-bind:value=&quot;option.value&quot;&gt;    &#123;&#123; option.text &#125;&#125;  &lt;/option&gt;
+&lt;/select&gt;
+&lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;
+new Vue(&#123; 
+el: &#39;...&#39;,  
+data: &#123;   
+selected: &#39;A&#39;,   
+options: [     
+&#123; text: &#39;One&#39;, value: &#39;A&#39; &#125;,      
+&#123; text: &#39;Two&#39;, value: &#39;B&#39; &#125;,  
+&#123; text: &#39;Three&#39;, value: &#39;C&#39; &#125;   
+]  
+&#125;&#125;)
+</code></pre>
+<h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><h3 id="Vue可以创建组件-并且可以被复用"><a href="#Vue可以创建组件-并且可以被复用" class="headerlink" title="Vue可以创建组件 并且可以被复用"></a>Vue可以创建组件 并且可以被复用</h3><pre class="language-htmlk" data-language="htmlk"><code class="language-htmlk">&lt;div id&#x3D;&quot;app&quot;&gt;&lt;love-button&gt;&lt;&#x2F;love-button&gt;	&lt;&#x2F;div&gt;	
+&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;		Vue.component(
+&#39;love-button&#39;, &#123;		
+data: function() &#123;	
+return &#123;
+count: 3000	
+&#125;,
+template: &#39;&lt;button v-on:click&#x3D;&quot;count++&quot;&gt;LOVE U &#123;&#123;count&#125;&#125;.&lt;&#x2F;button&gt;&#39;	&#125;)	
+new Vue(&#123;
+el: &#39;#app&#39;
+&#125;)	
+&lt;&#x2F;script&gt;</code></pre>
+
+<p>注意组件的模板必须有个根节点包裹 </p>
+<h3 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h3><p>组件名大小写</p>
+<p>定义组件名的方式有两种：</p>
+<p>使用 kebab-case</p>
+<pre><code>Vue.component(&#39;my-component-name&#39;, &#123; /* ... */ &#125;)
+</code></pre>
+<p>当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如 <code>&lt;my-component-name&gt;</code>。</p>
+<p>使用 PascalCase</p>
+<pre><code>Vue.component(&#39;MyComponentName&#39;, &#123; /* ... */ &#125;)
+</code></pre>
+<p>当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说 <code>&lt;my-component-name&gt;</code> 和 <code>&lt;MyComponentName&gt;</code> 都是可接受的。注意，尽管如此，直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。</p>
+<p>组件基础那种是全局注册 就是所有的vue都可以复用</p>
+<p>还有一种局部注册</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;    
+ &lt;love-button&gt;&lt;/love-button&gt;               &lt;component-a&gt;&lt;/component-a&gt;
+&lt;/div&gt;    
+&lt;script type=&quot;text/javascript&quot;&gt;            
+var ComponentA = &#123;     
+data:function()&#123;
+return&#123;    
+time:3000    
+&#125;&#125;,
+template:&#39;&lt;span&gt;Love u &#123;&#123;time&#125;&#125; times.&lt;/span&gt;&#39;    
+&#125;
+Vue.component(&#39;love-button&#39;, 
+&#123;    
+data: function() &#123;    
+return &#123;
+count: 2000    &#125;&#125;,    
+template: &#39;&lt;button v-on:click=&quot;count++&quot;&gt;LOVE U &#123;&#123;count&#125;&#125;.&lt;/button&gt;&#39;&#125;)
+new Vue(&#123;
+el: &#39;#app&#39;,
+components:&#123;
+&#39;component-a&#39;:ComponentA,
+&#125;
+&#125;)
+&lt;/script&gt;
+</code></pre>
+<p>就是使用javascript创建组件 然后添加到vue的components{}里面作为局部组件</p>
+<p>或者</p>
+<pre><code>components: &#123;componenta: 
+&#123;data: function() &#123;    
+return &#123;
+time:3000
+&#125;
+&#125;,
+template: &#39;&lt;span&gt;Love u &#123;&#123;time&#125;&#125; times.&lt;/span&gt;&#39;    &#125;&#125;
+</code></pre>
+<p>全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。这造成了用户下载的 JavaScript 的无谓的增加。</p>
+<h2 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h2><ul>
+<li>下载安装node.js</li>
+<li>在node安装目录中新建文件夹node_cache、node_global</li>
+<li>cmd执行<pre><code>npm config set prefix &quot;node_global的路径&quot;npm config set cache &quot;node_cache的路径&quot;
+</code></pre>
+</li>
+<li>配置环境变量<br>用户变量path里面添加node_global路径<br>系统变量添加NODE_PATH变量 值为node_modules的路径<br>然后配置到系统变量的CLASSPATH里面</li>
+<li>安装cnpm<pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+如果查看cnpm -v成功说明成功了<br>遇到问题:cnpm -v提示不是内部或者外部命令<pre><code>分两种情况 1.配置环境变量出错
+                    2.我的问题:上面的npm config命令输错了 一个是prefix 一个是cache所以安装的文件夹变成了缓存文件夹
+</code></pre>
+</li>
+<li>安装vue-cli<pre><code>cnpm install -g @vue/cli
+</code></pre>
+查看vue -V出现的如果是cli的版本就说明成功了</li>
+<li>安装webpack<pre><code>cnpm install -g webpack
+</code></pre>
+</li>
+</ul>
+<p>然后就可以使用vue ui来创建项目之类的了</p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">如果觉得喜欢，不妨打赏一下</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/zhifubao.jpg"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/zhifubao.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/qq.jpg"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/qq.jpg" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/weixin.jpg"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/pilotlalala/pilotlalala.github.io@latest/images/weixin.jpg" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>派洛特</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://pilotlalala.github.io/2021/06/19/JavaWEB/vue/" title="vue">https://pilotlalala.github.io/2021/06/19/JavaWEB/vue/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/06/21/%E9%9A%8F%E7%AC%94/2021-6-21-0%EF%BC%9A38/" rel="prev" title="2021.6.21 0：38"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">2021.6.21 0：38</span></a></div><div class="post-nav-item"></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/pilotlalala/pilotlalala.github.io/issues" target="_blank">GitHub_Issues</a> 与我交流。</span><br><a class="hty-button hty-button--raised" id="github-issues" target="_blank" rel="noopener" href="https://github.com/pilotlalala/pilotlalala.github.io/issues?q=is:issue+vue">GitHub Issues</a></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" title="感谢云游君的模板"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></a><span class="author"> 派洛特</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div></body></html>
